@@ -12,13 +12,15 @@
 			<button onclick="newImage();">new image</button>
 		</div>
 		
-		<img>
+		<img id="imgClickAndChange">
 		
 	</div>
 	<script>
+		var imageNumber = 0;
+		var imageUrl = "";
 		function newImage() {
-			var imageUrl = document.getElementById("imgUrl").value.split("<<number>>");
-			var imageNumber = Number(document.getElementById("imgNumber").value);
+			imageUrl = document.getElementById("imgUrl").value.split("<<number>>");
+			imageNumber = Number(document.getElementById("imgNumber").value);
 			document.getElementById("imgClickAndChange").src = imageUrl[0] + imageNumber + imageUrl[1];
 		}
 		
