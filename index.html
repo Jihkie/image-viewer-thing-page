@@ -1,0 +1,42 @@
+<html>
+<head>
+	
+	
+</head>
+<body>
+	<div>
+		<div>
+			<span>Replace the incremented number in the URL with &lt;&lt;number&gt;&gt;</span>
+			<input type="text" id="imgUrl" placeholder="image url">
+			<input type="text" id="imgNumber" placeholder="starting number">
+			<button onclick="newImage();">new image</button>
+		</div>
+		
+		<img>
+		
+	</div>
+	<script>
+		function newImage() {
+			var imageUrl = document.getElementById("imgUrl").value.split("<<number>>");
+			var imageNumber = Number(document.getElementById("imgNumber").value);
+			document.getElementById("imgClickAndChange").src = imageUrl[0] + imageNumber + imageUrl[1];
+		}
+		
+		
+		function changeImage(dir) {
+			var img = document.getElementById("imgClickAndChange");
+			imageNumber += dir;
+			img.src = imageUrl[0] + imageNumber + imageUrl[1];
+		}
+		document.onkeydown = function(e) {
+			e = e || window.event;
+			if (e.keyCode == '37') {
+				changeImage(-1) //left <- show Prev image
+			} else if (e.keyCode == '39') {
+				// right -> show next image
+				changeImage(1)
+			}
+		}
+	</script>
+</body>
+</html>
