@@ -3,16 +3,16 @@
 	
 	
 </head>
-<body style="margin:0px;">
-	<div>
-		<div style="width:fit-content;margin:auto;">
+<body style="margin:0px;height: 100%;width: 100%;overflow: hidden;">
+	<div style="width: 100%;height: 100%;display: table;">
+		<div style="display: table-row;height: 0px;text-align: center;">
 			<span>Replace the incremented number in the URL with &lt;&lt;number&gt;&gt;</span>
 			<input type="text" id="imgUrl" placeholder="image url">
 			<input type="text" id="imgNumber" placeholder="starting number">
 			<button onclick="newImage();">new image</button>
 		</div>
 		
-		<img id="imgClickAndChange">
+		<img id="imgClickAndChange" style="display: table-row;height: 100%;width: 100%;object-fit: contain;object-position: center;>
 		
 	</div>
 	<script>
