@@ -16,12 +16,16 @@
 		
 	</div>
 	<script>
+		var prevImg = new Image();
+		var nextImg = new Image();
 		var imageNumber = 0;
 		var imageUrl = "";
 		function newImage() {
 			imageUrl = document.getElementById("imgUrl").value.split("<<number>>");
 			imageNumber = Number(document.getElementById("imgNumber").value);
 			document.getElementById("imgClickAndChange").src = imageUrl[0] + imageNumber + imageUrl[1];
+			prevImg = imageUrl[0] + (imageNumber - 1) + imageUrl[1];
+			nextImg = imageUrl[0] + (imageNumber + 1) + imageUrl[1];
 		}
 		
 		
@@ -29,6 +33,8 @@
 			var img = document.getElementById("imgClickAndChange");
 			imageNumber += dir;
 			img.src = imageUrl[0] + imageNumber + imageUrl[1];
+			prevImg = imageUrl[0] + (imageNumber - 1) + imageUrl[1];
+			nextImg = imageUrl[0] + (imageNumber + 1) + imageUrl[1];
 		}
 		document.onkeydown = function(e) {
 			e = e || window.event;
